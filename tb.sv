@@ -76,7 +76,7 @@ class driver;
     $display("[DRV] : DATA WRITE  data : %0d", fif.data_in);  
     @(posedge fif.clock);
   endtask
-  
+ 
   // Read data from the FIFO
   task read();  
     @(posedge fif.clock);
