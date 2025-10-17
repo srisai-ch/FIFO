@@ -26,17 +26,21 @@ Simulate using ModelSim / Questa (recommended for SystemVerilog)
 Open PowerShell in this project folder and run:
 
 # Compile
+
 vlog FIFO.sv tb.sv
 
 # Run
+
 vsim -c work.tb -do "run -all; quit"
 
 Simulate using Synopsys VCS
 
 # Compile & elaborate
+
 vcs -sverilog FIFO.sv tb.sv -o simv
 
 # Run
+
 ./simv +vcs+vcdpluson
 
 Simulate using Icarus Verilog (limited SV support)
@@ -44,19 +48,15 @@ Simulate using Icarus Verilog (limited SV support)
 Icarus Verilog has limited SystemVerilog support. For simple behavioral tests (if compatible):
 
 # Compile
+
 iverilog -g2012 -o simv FIFO.sv tb.sv
 
 # Run
-vvp simv
 
 Notes
 
 - Adjust compile/run commands for your simulator installation path and licensing requirements.
 - If the testbench uses advanced SystemVerilog features, prefer ModelSim/Questa or VCS.
-
-License
-
-MIT License — see LICENSE file if present.
 
 Contact
 
